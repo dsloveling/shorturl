@@ -1,0 +1,33 @@
+spring:
+  redis:
+    host: 172.23.23.132
+    database: 6
+    timeout: 3000
+    password: QBvl5TTVFNtr
+    port: 6379
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://172.23.23.116:3306/exercise?serverTimezone=GMT
+    username: root
+    password: 123456
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+domain: http://172.23.23.116:8080/short/
+server:
+  port: 8080
+logback:
+  common:
+    level: info
+  root:
+    level: error
