@@ -1,10 +1,24 @@
-spring:
-  redis:
+redis:
+  single:
     host: 172.23.23.132
     database: 6
     timeout: 3000
     password: QBvl5TTVFNtr
     port: 6379
+  cluster:
+    password: sword-cluster
+    nodes:
+      - 172.23.23.133:30001
+      - 172.23.23.133:30002
+      - 172.23.23.133:30003
+      - 172.23.23.133:30004
+      - 172.23.23.133:30005
+      - 172.23.23.133:30006
+  sentinel:
+    master:
+    nodes:
+    password:
+spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
@@ -24,6 +38,9 @@ spring:
       force: true
 
 domain: http://172.23.23.116:8080/short/
+daily:
+  invoke:
+    limit: 100
 server:
   port: 8080
 logback:
