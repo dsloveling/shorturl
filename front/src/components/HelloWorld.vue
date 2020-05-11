@@ -31,7 +31,7 @@ export default {
         this.shortUrl =  sourceUrl;
         return
       }
-      Axios.get('/api/generate?sourceUrl=' + sourceUrl).then(response => {
+      Axios.get('/api/generate?source=' + sourceUrl).then(response => {
         console.log(response)
         this.shortUrl = response.data
       }).catch(function (error) {

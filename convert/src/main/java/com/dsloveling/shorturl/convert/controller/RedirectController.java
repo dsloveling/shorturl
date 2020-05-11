@@ -22,9 +22,9 @@ public class RedirectController {
     @Autowired
     private ShortUrlService shortUrlService;
 
-    @GetMapping("/{sourceUrl}")
-    public void redirect(@PathVariable String sourceUrl, HttpServletResponse response) throws IOException {
-        ShortUrlRelation shortUrlRelation = shortUrlService.getRelationByShortUrl(sourceUrl);
+    @GetMapping("/{source}")
+    public void redirect(@PathVariable String source, HttpServletResponse response) throws IOException {
+        ShortUrlRelation shortUrlRelation = shortUrlService.getRelationByShortUrl(source);
         if (shortUrlRelation != null) {
             response.sendRedirect(shortUrlRelation.getSourceUrl());
         }

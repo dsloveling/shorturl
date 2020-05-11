@@ -43,6 +43,7 @@ domain: http://172.23.23.116:8080/short/
 daily:
   invoke:
     limit: 100
+    qps: 10
 server:
   port: 8080
 logback:

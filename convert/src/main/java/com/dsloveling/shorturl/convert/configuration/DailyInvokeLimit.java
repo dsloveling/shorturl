@@ -1,7 +1,8 @@
 package com.dsloveling.shorturl.convert.configuration;
 
 import lombok.Data;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -10,9 +11,12 @@ import org.springframework.context.annotation.Configuration;
  * @version 1.0
  * @date 2020-05-10 21:31
  */
+@EnableConfigurationProperties
 @Configuration
-@ConditionalOnProperty(prefix = "daily.invoke",name = "limit")
+@ConfigurationProperties(prefix = "daily.invoke")
 @Data
 public class DailyInvokeLimit {
     private Integer limit;
+
+    private Integer qps;
 }
