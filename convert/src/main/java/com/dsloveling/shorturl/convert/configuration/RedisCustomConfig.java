@@ -1,8 +1,8 @@
 package com.dsloveling.shorturl.convert.configuration;
 
 import com.dsloveling.shorturl.convert.constant.RedisModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -22,25 +22,25 @@ public class RedisCustomConfig {
     @Value("${redis.model}")
     private String model;
 
+    @Autowired(required = false)
+    private RedisSingleConfig redisSingleConfig;
+
+    @Autowired(required = false)
+    private RedisSentinelConfig redisSentinelConfig;
+
+    @Autowired(required = false)
+    private RedisClusterConfig redisClusterConfig;
+
     @Bean
     @Primary
-    public RedisConnectionFactory redisConnectionFactory(ApplicationContext applicationContext) {
-        RedisSingleConfig redisSingleConfig = applicationContext.containsBeanDefinition(
-                "redisSingleConfig") ? (RedisSingleConfig) applicationContext.getBean(
-                "redisSingleConfig") : null;
-        RedisSentinelConfig redisSentinelConfig= applicationContext.containsBeanDefinition(
-                "redisSentinelConfig") ? (RedisSentinelConfig) applicationContext.getBean(
-                "redisSentinelConfig") : null;
-        RedisClusterConfig redisClusterConfig = applicationContext.containsBeanDefinition(
-                "redisClusterConfig") ? (RedisClusterConfig) applicationContext.getBean(
-                "redisClusterConfig") : null;
+    public RedisConnectionFactory redisConnectionFactory() {
         if (redisSingleConfig != null && RedisModel.SINGLE.getModel().equals(model)) {
             return new LettuceConnectionFactory(getRedisSingleConfiguration(redisSingleConfig));
         }
-        if (redisSentinelConfig != null  && RedisModel.SENTINEL.getModel().equals(model)) {
+        if (redisSentinelConfig != null && RedisModel.SENTINEL.getModel().equals(model)) {
             return new LettuceConnectionFactory(getRedisSentinelConfiguration(redisSentinelConfig));
         }
-        if (redisClusterConfig != null  && RedisModel.CLUSTER.getModel().equals(model)) {
+        if (redisClusterConfig != null && RedisModel.CLUSTER.getModel().equals(model)) {
             return new LettuceConnectionFactory(getRedisClusterConfiguration(redisClusterConfig));
         }
         throw new IllegalArgumentException("redis配置出错,单机、集群、哨兵均无配置");

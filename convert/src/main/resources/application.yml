@@ -15,9 +15,11 @@ redis:
       - 172.23.23.133:30005
       - 172.23.23.133:30006
   sentinel:
-    master:
+    master: mymaster
     nodes:
-    password:
+      - 172.23.23.133:46380
+      - 172.23.23.133:46381
+    password: sentinel-36379
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
