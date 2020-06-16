@@ -1,10 +1,10 @@
 redis:
   single:
-    host: 172.23.23.132
+    host: 192.168.1.128
     database: 6
     timeout: 3000
-    password: QBvl5TTVFNtr
-    port: 6379
+    password: 6Kgvd4BzNIX1
+    port: 6789
   cluster:
     password: sword-cluster
     nodes:
@@ -24,9 +24,9 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://172.23.23.116:3306/exercise?serverTimezone=GMT
+    url: jdbc:mysql://192.168.1.128:3306/exercise?serverTimezone=GMT
     username: root
-    password: 123456
+    password: 123qewQWE!@#
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
@@ -39,7 +39,7 @@ spring:
       enabled: true
       force: true
 
-domain: http://172.23.23.116:8080/short/
+domain: http://192.168.1.15:8080/short/
 daily:
   invoke:
     limit: 100

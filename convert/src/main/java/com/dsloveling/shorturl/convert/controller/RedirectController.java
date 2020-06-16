@@ -2,6 +2,8 @@ package com.dsloveling.shorturl.convert.controller;
 
 import com.dsloveling.shorturl.convert.entity.ShortUrlRelation;
 import com.dsloveling.shorturl.convert.service.ShortUrlService;
+import com.dsloveling.shorturl.convert.service.ShortUrlVistsService;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +24,14 @@ public class RedirectController {
     @Autowired
     private ShortUrlService shortUrlService;
 
+    @Autowired
+    private ShortUrlVistsService shortUrlVistsService;
+
     @GetMapping("/{source}")
     public void redirect(@PathVariable String source, HttpServletResponse response) throws IOException {
         ShortUrlRelation shortUrlRelation = shortUrlService.getRelationByShortUrl(source);
         if (shortUrlRelation != null) {
+            shortUrlVistsService.updateRank(shortUrlRelation);
             response.sendRedirect(shortUrlRelation.getSourceUrl());
         }
     }

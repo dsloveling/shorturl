@@ -1,13 +1,17 @@
 package com.dsloveling.shorturl.convert.controller;
 
 import com.dsloveling.shorturl.convert.configuration.DailyInvokeLimit;
+import com.dsloveling.shorturl.convert.entity.VisitRank;
 import com.dsloveling.shorturl.convert.service.ShortUrlService;
+import com.dsloveling.shorturl.convert.service.ShortUrlVistsService;
 import com.google.common.util.concurrent.RateLimiter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author dsloveling
@@ -24,6 +28,9 @@ public class ShortUrlController {
     private ShortUrlService shortUrlService;
 
     @Autowired
+    private ShortUrlVistsService shortUrlVistsService;
+
+    @Autowired
     private RateLimiter rateLimiter;
 
     @GetMapping("/generate")
@@ -32,6 +39,11 @@ public class ShortUrlController {
             return shortUrlService.getTargetFullShortUrl(source);
         }
         return REFUSE;
+    }
+
+    @GetMapping("/rank")
+    public List<VisitRank> getRankList() {
+        return shortUrlVistsService.getVisitRankList();
     }
 
 }

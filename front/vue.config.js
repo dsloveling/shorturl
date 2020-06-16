@@ -7,7 +7,7 @@ module.exports = {
 		port: 8081,
 		proxy: {
 			'/api': {
-				target: 'http://172.23.23.116:8080',
+				target: 'http://192.168.1.15:8080',
 			}
 		}
 	},
