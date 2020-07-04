@@ -1,6 +1,5 @@
 package com.dsloveling.shorturl.convert.controller;
 
-import com.dsloveling.shorturl.convert.configuration.DailyInvokeLimit;
 import com.dsloveling.shorturl.convert.entity.VisitRank;
 import com.dsloveling.shorturl.convert.service.ShortUrlService;
 import com.dsloveling.shorturl.convert.service.ShortUrlVistsService;

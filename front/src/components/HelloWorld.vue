@@ -41,11 +41,7 @@
                 timer: null,
                 input: '',
                 shortUrl: '',
-                tableData: [{
-                    rank: 1,
-                    address: 'http://www.baidu.com',
-                    score: 10
-                }]
+                tableData: []
             }
         },
         beforeMount() {
@@ -55,9 +51,8 @@
                     this.tableData = response.data;
                 }).catch(function (error) {
                     console.log(error);
-                    alert('获取访问热榜失败');
                 })
-            }, 1000);
+            }, 3000);
         },
         beforeDestroy() {
             clearInterval(this.timer);

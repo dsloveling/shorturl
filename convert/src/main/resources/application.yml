@@ -1,6 +1,6 @@
 redis:
   single:
-    host: 192.168.1.128
+    host: 39.106.171.124
     database: 6
     timeout: 3000
     password: 6Kgvd4BzNIX1
@@ -8,25 +8,25 @@ redis:
   cluster:
     password: sword-cluster
     nodes:
-      - 172.23.23.133:30001
-      - 172.23.23.133:30002
-      - 172.23.23.133:30003
-      - 172.23.23.133:30004
-      - 172.23.23.133:30005
-      - 172.23.23.133:30006
+      - 39.106.171.124:30001
+      - 39.106.171.124:30002
+      - 39.106.171.124:30003
+      - 39.106.171.124:30004
+      - 39.106.171.124:30005
+      - 39.106.171.124:30006
   sentinel:
     master: mymaster
     nodes:
-      - 172.23.23.133:46380
-      - 172.23.23.133:46381
-    password: sentinel-36379
+      - 172.17.151.233:26579
+      - 172.17.151.233:26679
+#    password: sentinel-36379
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://192.168.1.128:3306/exercise?serverTimezone=GMT
+    url: jdbc:mysql://172.17.151.233:3306/exercise?serverTimezone=Asia/Shanghai
     username: root
-    password: 123qewQWE!@#
+    password: 123456
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
@@ -39,13 +39,13 @@ spring:
       enabled: true
       force: true
 
-domain: http://192.168.1.15:8080/short/
+domain: http://172.17.151.233:9090/short/
 daily:
   invoke:
-    limit: 100
-    qps: 10
+    limit: 10000
+    qps: 1000
 server:
-  port: 8080
+  port: 9090
 logback:
   common:
     level: info
