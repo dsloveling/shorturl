@@ -1,9 +1,9 @@
 package org.dsloveling.shorturl.convert.controller;
 
-import com.dsloveling.shorturl.convert.entity.VisitRank;
-import com.dsloveling.shorturl.convert.service.ShortUrlService;
-import com.dsloveling.shorturl.convert.service.ShortUrlVistsService;
 import com.google.common.util.concurrent.RateLimiter;
+import org.dsloveling.shorturl.convert.entity.VisitRank;
+import org.dsloveling.shorturl.convert.service.ShortUrlService;
+import org.dsloveling.shorturl.convert.service.ShortUrlVistsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

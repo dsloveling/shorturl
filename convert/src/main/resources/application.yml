@@ -1,24 +1,24 @@
 redis:
-  single:
-    host: 39.106.171.124
-    database: 6
-    password: 6Kgvd4BzNIX1
-    port: 6789
-  cluster:
-    password: sword-cluster
-    nodes:
-      - 39.106.171.124:30001
-      - 39.106.171.124:30002
-      - 39.106.171.124:30003
-      - 39.106.171.124:30004
-      - 39.106.171.124:30005
-      - 39.106.171.124:30006
+#  single:
+#    host: 39.106.171.124
+#    database: 6
+#    password: 6Kgvd4BzNIX1
+#    port: 6789
+#  cluster:
+#    password: sword-cluster
+#    nodes:
+#      - 39.106.171.124:30001
+#      - 39.106.171.124:30002
+#      - 39.106.171.124:30003
+#      - 39.106.171.124:30004
+#      - 39.106.171.124:30005
+#      - 39.106.171.124:30006
   sentinel:
     master: mymaster
     nodes:
       - 172.17.151.233:26579
       - 172.17.151.233:26679
-#    password: sentinel-36379
+    password: sentinel-36379
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -37,6 +37,8 @@ spring:
       charset: UTF-8
       enabled: true
       force: true
+  main:
+    allow-bean-definition-overriding: true
 
 domain: http://172.17.151.233:9090/short/
 daily:
