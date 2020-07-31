@@ -1,9 +1,8 @@
-package com.dsloveling.shorturl.convert.controller;
+package org.dsloveling.shorturl.convert.controller;
 
-import com.dsloveling.shorturl.convert.entity.ShortUrlRelation;
-import com.dsloveling.shorturl.convert.service.ShortUrlService;
-import com.dsloveling.shorturl.convert.service.ShortUrlVistsService;
-import org.checkerframework.checker.units.qual.A;
+import org.dsloveling.shorturl.convert.entity.ShortUrlRelation;
+import org.dsloveling.shorturl.convert.service.ShortUrlService;
+import org.dsloveling.shorturl.convert.service.ShortUrlVistsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

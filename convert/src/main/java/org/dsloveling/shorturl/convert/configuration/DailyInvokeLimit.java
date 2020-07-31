@@ -1,4 +1,4 @@
-package com.dsloveling.shorturl.convert.configuration;
+package org.dsloveling.shorturl.convert.configuration;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

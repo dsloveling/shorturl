@@ -1,9 +1,9 @@
-package com.dsloveling.shorturl.convert.service;
+package org.dsloveling.shorturl.convert.service;
 
-import com.dsloveling.shorturl.convert.dao.ShortUrlStorage;
-import com.dsloveling.shorturl.convert.entity.ShortUrlRelation;
-import com.dsloveling.shorturl.convert.entity.VisitRank;
 import lombok.extern.slf4j.Slf4j;
+import org.dsloveling.shorturl.convert.dao.ShortUrlStorage;
+import org.dsloveling.shorturl.convert.entity.ShortUrlRelation;
+import org.dsloveling.shorturl.convert.entity.VisitRank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;

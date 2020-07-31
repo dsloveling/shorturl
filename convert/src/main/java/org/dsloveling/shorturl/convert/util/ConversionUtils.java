@@ -1,4 +1,4 @@
-package com.dsloveling.shorturl.convert.util;
+package org.dsloveling.shorturl.convert.util;
 
 import cn.hutool.core.util.StrUtil;
 import lombok.experimental.UtilityClass;

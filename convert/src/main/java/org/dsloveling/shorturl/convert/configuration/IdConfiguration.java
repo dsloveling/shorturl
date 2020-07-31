@@ -1,4 +1,4 @@
-package com.dsloveling.shorturl.convert.configuration;
+package org.dsloveling.shorturl.convert.configuration;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;

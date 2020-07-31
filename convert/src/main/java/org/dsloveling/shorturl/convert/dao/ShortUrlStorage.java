@@ -1,6 +1,6 @@
-package com.dsloveling.shorturl.convert.dao;
+package org.dsloveling.shorturl.convert.dao;
 
-import com.dsloveling.shorturl.convert.entity.ShortUrlRelation;
+import org.dsloveling.shorturl.convert.entity.ShortUrlRelation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;

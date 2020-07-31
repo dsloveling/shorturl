@@ -1,11 +1,11 @@
-package com.dsloveling.shorturl.convert.service;
+package org.dsloveling.shorturl.convert.service;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.crypto.SecureUtil;
-import com.dsloveling.shorturl.convert.dao.ShortUrlStorage;
-import com.dsloveling.shorturl.convert.entity.ShortUrlRelation;
-import com.dsloveling.shorturl.convert.util.ConversionUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.dsloveling.shorturl.convert.dao.ShortUrlStorage;
+import org.dsloveling.shorturl.convert.entity.ShortUrlRelation;
+import org.dsloveling.shorturl.convert.util.ConversionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

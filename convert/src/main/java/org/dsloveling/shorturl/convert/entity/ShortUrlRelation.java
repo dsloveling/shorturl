@@ -1,4 +1,4 @@
-package com.dsloveling.shorturl.convert.entity;
+package org.dsloveling.shorturl.convert.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

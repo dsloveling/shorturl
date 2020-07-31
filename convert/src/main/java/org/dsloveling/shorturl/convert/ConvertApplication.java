@@ -1,8 +1,8 @@
-package com.dsloveling.shorturl.convert;
+package org.dsloveling.shorturl.convert;
 
-import com.dsloveling.shorturl.convert.configuration.DailyInvokeLimit;
-import com.dsloveling.shorturl.convert.configuration.WhiteIpInterceptor;
 import com.google.common.util.concurrent.RateLimiter;
+import org.dsloveling.shorturl.convert.configuration.DailyInvokeLimit;
+import org.dsloveling.shorturl.convert.configuration.WhiteIpInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
