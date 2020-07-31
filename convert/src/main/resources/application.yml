@@ -2,7 +2,6 @@ redis:
   single:
     host: 39.106.171.124
     database: 6
-    timeout: 3000
     password: 6Kgvd4BzNIX1
     port: 6789
   cluster:
